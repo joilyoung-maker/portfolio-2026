@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/workout-tracker/index.html" },
+    { "source": "/(.*)", "destination": "/workout-tracker/$1" }
+  ]
+}
