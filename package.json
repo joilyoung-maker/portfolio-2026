@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "scripts": {
+    "install": "cd workout-tracker && npm install",
+    "build": "cd workout-tracker && npm run build"
+  }
+}
