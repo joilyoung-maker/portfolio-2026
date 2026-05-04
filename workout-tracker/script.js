@@ -186,27 +186,27 @@ document.addEventListener('DOMContentLoaded', () => {
             
             todaysWorkouts.forEach(workout => {
                 const li = document.createElement('li');
-                li.className = 'flex items-center justify-between p-3 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-all group';
+                li.className = 'flex items-center justify-between p-2.5 bg-white border border-slate-100 rounded-xl hover:shadow-sm transition-all group';
                 li.dataset.id = workout.id;
                 
                 const vol = workout.weight * workout.sets * workout.reps;
                 totalVolume += vol;
                 
                 li.innerHTML = `
-                    <div class="flex flex-col flex-1 min-w-0 pr-4">
-                        <span class="font-bold text-slate-800 truncate">${escapeHTML(workout.name)}</span>
-                        <div class="flex gap-1.5 mt-1">
-                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[10px] font-bold">${workout.weight}kg</span>
-                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[10px] font-bold">${workout.sets}세트</span>
-                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[10px] font-bold">${workout.reps}회</span>
+                    <div class="flex flex-col flex-1 min-w-0 pr-2">
+                        <span class="font-bold text-sm text-slate-800 truncate">${escapeHTML(workout.name)}</span>
+                        <div class="flex gap-1 mt-0.5">
+                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[9px] font-bold">${workout.weight}kg</span>
+                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[9px] font-bold">${workout.sets}세트</span>
+                            <span class="px-1.5 py-0.5 bg-slate-50 text-slate-500 rounded text-[9px] font-bold">${workout.reps}회</span>
                         </div>
                     </div>
-                    <div class="flex gap-1">
-                        <button class="edit-btn p-2 text-slate-300 hover:text-indigo-500 transition-colors" aria-label="수정">
-                            <i class="fas fa-edit"></i>
+                    <div class="flex gap-0.5">
+                        <button class="edit-btn p-1.5 text-slate-300 hover:text-indigo-500 transition-colors" aria-label="수정">
+                            <i class="fas fa-edit text-xs"></i>
                         </button>
-                        <button class="delete-btn p-2 text-slate-300 hover:text-rose-500 transition-colors" aria-label="삭제">
-                            <i class="fas fa-trash-alt"></i>
+                        <button class="delete-btn p-1.5 text-slate-300 hover:text-rose-500 transition-colors" aria-label="삭제">
+                            <i class="fas fa-trash-alt text-xs"></i>
                         </button>
                     </div>
                 `;

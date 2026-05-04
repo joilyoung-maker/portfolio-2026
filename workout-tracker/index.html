@@ -34,57 +34,57 @@
 <body>
     <div id="app" class="w-full max-w-[480px] bg-white min-h-screen shadow-2xl shadow-slate-200 flex flex-col relative overflow-hidden">
         <!-- Header -->
-        <header class="flex justify-between items-center p-6 border-b border-slate-100 sticky top-0 bg-white/80 backdrop-blur-md z-10">
-            <button id="prev-date-btn" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="이전 날짜">
-                <i class="fas fa-chevron-left"></i>
+        <header class="flex justify-between items-center p-3 border-b border-slate-100 sticky top-0 bg-white/80 backdrop-blur-md z-10">
+            <button id="prev-date-btn" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="이전 날짜">
+                <i class="fas fa-chevron-left text-sm"></i>
             </button>
             <div class="text-center">
-                <h1 id="current-date-text" class="text-lg font-bold text-slate-800">오늘</h1>
-                <span id="current-date-sub" class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">2026. 04. 26</span>
+                <h1 id="current-date-text" class="text-base font-bold text-slate-800 leading-tight">오늘</h1>
+                <span id="current-date-sub" class="text-[9px] text-slate-400 font-semibold uppercase tracking-wider">2026. 04. 26</span>
             </div>
-            <div class="flex gap-1">
-                <button id="next-date-btn" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="다음 날짜">
-                    <i class="fas fa-chevron-right"></i>
+            <div class="flex gap-0.5">
+                <button id="next-date-btn" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="다음 날짜">
+                    <i class="fas fa-chevron-right text-sm"></i>
                 </button>
-                <button id="open-history-btn" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="전체 기록 보기">
-                    <i class="fas fa-list"></i>
+                <button id="open-history-btn" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="전체 기록 보기">
+                    <i class="fas fa-list text-sm"></i>
                 </button>
-                <button id="open-calendar-btn" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="달력 보기">
-                    <i class="fas fa-calendar-alt"></i>
+                <button id="open-calendar-btn" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors" aria-label="달력 보기">
+                    <i class="fas fa-calendar-alt text-sm"></i>
                 </button>
             </div>
         </header>
 
         <!-- Main Content -->
-        <main class="flex-1 p-5 overflow-y-auto">
-            <section class="bg-white border border-slate-100 rounded-3xl p-5 mb-6 shadow-sm">
-                <div id="favorites-list" class="mb-4"></div>
-                <form id="workout-form" class="flex flex-col gap-4">
-                    <div class="flex flex-col gap-1.5">
-                        <label for="exercise-name" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">운동 종목</label>
+        <main class="flex-1 p-3 overflow-y-auto">
+            <section class="bg-white border border-slate-100 rounded-2xl p-4 mb-4 shadow-sm">
+                <div id="favorites-list" class="mb-3"></div>
+                <form id="workout-form" class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-1">
+                        <label for="exercise-name" class="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">운동 종목</label>
                         <input type="text" id="exercise-name" placeholder="예: 벤치 프레스" required autocomplete="off"
-                            class="w-full p-3.5 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
+                            class="w-full p-2.5 bg-slate-50 border-none rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
                     </div>
-                    <div class="flex gap-3">
-                        <div class="flex flex-col gap-1.5 flex-1">
-                            <label for="exercise-weight" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">무게 (kg)</label>
+                    <div class="flex gap-2.5">
+                        <div class="flex flex-col gap-1 flex-1">
+                            <label for="exercise-weight" class="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">무게(kg)</label>
                             <input type="number" id="exercise-weight" placeholder="0" min="0" step="0.5"
-                                class="w-full p-3.5 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
+                                class="w-full p-2.5 bg-slate-50 border-none rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
                         </div>
-                        <div class="flex flex-col gap-1.5 flex-1">
-                            <label for="exercise-sets" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">세트</label>
+                        <div class="flex flex-col gap-1 flex-1">
+                            <label for="exercise-sets" class="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">세트</label>
                             <input type="number" id="exercise-sets" placeholder="0" min="1" required
-                                class="w-full p-3.5 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
+                                class="w-full p-2.5 bg-slate-50 border-none rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
                         </div>
-                        <div class="flex flex-col gap-1.5 flex-1">
-                            <label for="exercise-reps" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">횟수</label>
+                        <div class="flex flex-col gap-1 flex-1">
+                            <label for="exercise-reps" class="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">횟수</label>
                             <input type="number" id="exercise-reps" placeholder="0" min="1" required
-                                class="w-full p-3.5 bg-slate-50 border-none rounded-2xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
+                                class="w-full p-2.5 bg-slate-50 border-none rounded-xl text-sm font-medium focus:ring-2 focus:ring-indigo-500/20 outline-none transition-all placeholder:text-slate-300">
                         </div>
                     </div>
                     <button type="submit" id="submit-btn" 
-                        class="mt-2 bg-indigo-600 text-white p-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-700 active:scale-95 transition-all shadow-lg shadow-indigo-100">
-                        <i class="fas fa-plus"></i> <span>기록 추가</span>
+                        class="mt-1 bg-indigo-600 text-white p-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-700 active:scale-95 transition-all shadow-md shadow-indigo-100">
+                        <i class="fas fa-plus text-sm"></i> <span class="text-sm">기록 추가</span>
                     </button>
                 </form>
             </section>
