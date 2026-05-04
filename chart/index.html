@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청천 맑은공기 - 부평구 청천동 미세먼지</title>
+    <meta name="description" content="인천광역시 부평구 청천동의 실시간 미세먼지 및 대기질 정보를 제공합니다.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="status-good">
+    <div class="background-overlay"></div>
+    <div class="animated-bg">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="header">
+            <div class="location-info">
+                <span class="icon">📍</span>
+                <h1 id="location-name">인천광역시 부평구 청천동</h1>
+            </div>
+            <div class="time-info">
+                <span id="current-time">2024.05.20 18:30</span> 업데이트
+            </div>
+        </header>
+
+        <section class="main-dashboard">
+            <div class="aqi-display glass">
+                <div class="status-label" id="aqi-status-text">좋음</div>
+                <div class="aqi-value" id="aqi-value">18</div>
+                <div class="aqi-unit">AQI Index</div>
+                <p class="status-desc" id="aqi-desc">공기가 아주 깨끗합니다. 야외 활동을 즐기기에 완벽한 날씨예요!</p>
+            </div>
+        </section>
+
+        <section class="details-grid">
+            <div class="detail-card glass">
+                <div class="label">초미세먼지 (PM2.5)</div>
+                <div class="value"><span id="pm25-value">8</span> <small>µg/m³</small></div>
+                <div class="level level-good" id="pm25-level">좋음</div>
+            </div>
+            <div class="detail-card glass">
+                <div class="label">미세먼지 (PM10)</div>
+                <div class="value"><span id="pm10-value">22</span> <small>µg/m³</small></div>
+                <div class="level level-good" id="pm10-level">좋음</div>
+            </div>
+            <div class="detail-card glass">
+                <div class="label">오존 (O3)</div>
+                <div class="value"><span id="o3-value">0.032</span> <small>ppm</small></div>
+                <div class="level level-good" id="o3-level">좋음</div>
+            </div>
+            <div class="detail-card glass">
+                <div class="label">이산화질소 (NO2)</div>
+                <div class="value"><span id="no2-value">0.015</span> <small>ppm</small></div>
+                <div class="level level-good" id="no2-level">좋음</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <button id="refresh-btn" class="refresh-button">
+                <span class="refresh-icon">🔄</span> 정보 업데이트
+            </button>
+            <p class="data-source">데이터 출처: 환경부 한국환경공단(에어코리아) & 공공데이터포털</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Weight Training Tracker</title>
+    <!-- Outfit Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button id="prev-date-btn" class="icon-btn" aria-label="이전 날짜"><i class="fas fa-chevron-left"></i></button>
+            <div class="date-display">
+                <h1 id="current-date-text">오늘</h1>
+                <span id="current-date-sub">2026. 04. 26</span>
+            </div>
+            <div class="header-actions" style="display:flex;">
+                <button id="next-date-btn" class="icon-btn" aria-label="다음 날짜"><i class="fas fa-chevron-right"></i></button>
+                <button id="open-history-btn" class="icon-btn" aria-label="전체 기록 보기"><i class="fas fa-list"></i></button>
+                <button id="open-calendar-btn" class="icon-btn" aria-label="달력 보기"><i class="fas fa-calendar-alt"></i></button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Add Workout Form -->
+            <section class="add-workout-section">
+                <div class="favorites-container">
+                    <div id="favorites-list" class="favorites-list">
+                        <!-- Categorized tags injected via JS -->
+                    </div>
+                </div>
+
+                <form id="workout-form" class="workout-form">
+                    <div class="form-group full-width">
+                        <label for="exercise-name">운동 종목</label>
+                        <input type="text" id="exercise-name" placeholder="예: 벤치 프레스" required autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exercise-weight">무게 (kg)</label>
+                            <input type="number" id="exercise-weight" placeholder="0" min="0" step="0.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="exercise-sets">세트</label>
+                            <input type="number" id="exercise-sets" placeholder="0" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exercise-reps">횟수</label>
+                            <input type="number" id="exercise-reps" placeholder="0" min="1" required>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-btn" class="submit-btn"><i class="fas fa-plus"></i> <span>기록 추가</span></button>
+                </form>
+            </section>
+
+            <!-- Workout List -->
+            <section class="workout-list-section">
+                <div class="list-header">
+                    <h2>오늘의 기록</h2>
+                    <span id="total-volume" class="total-volume">총 볼륨: 0 kg</span>
+                </div>
+                
+                <ul id="workout-list" class="workout-list">
+                    <!-- List items injected via JS -->
+                </ul>
+                
+                <div id="empty-state" class="empty-state">
+                    <i class="fas fa-dumbbell"></i>
+                    <p>아직 기록된 운동이 없습니다.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Calendar View (Hidden by default) -->
+        <div id="calendar-view" class="calendar-view hidden">
+            <div class="calendar-header">
+                <button id="cal-prev-btn" class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="calendar-title">2026년 4월</h2>
+                <button id="cal-next-btn" class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+                <button id="close-calendar-btn" class="icon-btn close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="calendar-body">
+                <div class="calendar-weekdays">
+                    <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+                </div>
+                <div id="calendar-grid" class="calendar-grid">
+                    <!-- Dates injected via JS -->
+                </div>
+            </div>
+            
+            <div class="calendar-footer">
+                <p>이번 달 총 볼륨: <span id="monthly-volume-text">0 kg</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- History View (Hidden by default) -->
+    <div id="history-view" class="calendar-view hidden">
+        <div class="calendar-header">
+            <h2>전체 기록</h2>
+            <button id="close-history-btn" class="icon-btn close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="calendar-body history-body">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>종목</th>
+                        <th>무게</th>
+                        <th>세트</th>
+                        <th>횟수</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- History injected via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
