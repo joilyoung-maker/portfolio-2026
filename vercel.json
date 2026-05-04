@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd workout-tracker && npm install && npm run build",
+  "outputDirectory": "workout-tracker/dist",
+  "installCommand": "cd workout-tracker && npm install",
+  "framework": "vite"
+}
